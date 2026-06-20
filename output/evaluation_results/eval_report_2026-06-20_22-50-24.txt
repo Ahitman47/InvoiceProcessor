@@ -1,0 +1,75 @@
+Invoice Processing Evaluation
+Generated: 2026-06-20 22:50:24
+Dataset size: 17 invoices
+
+Overall Results
+---------------
+Decision accuracy: 17/17 (100.0%)
+Exact extraction matches: 9/17 (52.9%)
+
+Field Accuracy
+--------------
+vendor               17/17 (100.0%)
+buyer_name           17/17 (100.0%)
+invoice_number       17/17 (100.0%)
+invoice_date         14/17 (82.4%)
+net_total            17/17 (100.0%)
+vat_total            17/17 (100.0%)
+gross_total          17/17 (100.0%)
+currency             17/17 (100.0%)
+category             17/17 (100.0%)
+
+Line Item Accuracy
+------------------
+item_count           17/17 (100.0%)
+description          42/47 (89.4%)
+quantity             47/47 (100.0%)
+net_price            47/47 (100.0%)
+vat_pct              47/47 (100.0%)
+line_gross_total     47/47 (100.0%)
+
+Results by File Type
+--------------------
+jpg      2/5 (40.0%)
+pdf      4/7 (57.1%)
+png      2/3 (66.7%)
+tiff     1/2 (50.0%)
+
+Financial Consistency
+---------------------
+Invoices within tolerance: 17/17
+Total line amounts:  2459.67
+Total gross amounts: 2459.64
+Difference: 0.03
+
+Incorrect Extractions
+---------------------
+
+invoice_027.png
+  - item[1].description: expected '10'' Cuphead Game Soft Plush Doll Cuphead Mugman Mecup Brocup kids Gift US Stock', got '10" Cuphead Game Soft Plush Doll Cuphead Mugman Mecup Brocup kids Gift US Stock'
+
+invoice_030.tiff
+  - item[2].description: expected 'Women Sexy Lingerie Lace Dress Underwear Babydoll Sleepwear G-String Bikini Lot', got 'Women Sexy Lingerie Lace Dress Underwear Babydoll Sleepwear G-string Bikini Lot'
+
+invoice_024.jpg
+  - item[0].description: expected 'Matilda Jane Womans Lets Go Together Black Knit Dress Size M Medium NWT', got 'Matilda lane Womans Lets Go Together Black Knit Dress Size M Medium NWT'
+
+invoice_028.pdf
+  - invoice_date: expected '2017-06-05', got '2017-05-06'
+
+invoice_029.pdf
+  - invoice_date: expected '2019-04-05', got '2019-05-04'
+
+invoice_031.jpg
+  - item[5].description: expected 'Unleashed : The Story of Tool, Paperback by McIver, Joel, Brand New, Free shi...', got 'Unleashed : The Story of Tool, Paperback by Mclver, Joel, Brand New, Free shi...'
+
+invoice_004.jpg
+  - invoice_date: expected '2017-04-08', got '2017-08-04'
+
+invoice_015.pdf
+  - item[3].description: expected 'The Fifty Greatest Conspiracies of All Time History s Biggest Myster', got 'The Fifty Greatest Conspiracies of All Time History s Biggest Mystery'
+
+Summary
+-------
+The pipeline produced exact extraction matches for 9 out of 17 invoices (52.9%).
+Decision accuracy was 100.0% across the evaluation dataset.

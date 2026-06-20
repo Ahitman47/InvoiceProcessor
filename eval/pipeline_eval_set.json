@@ -1,0 +1,673 @@
+{
+  "pipeline_eval": [
+    {
+      "source_file": "invoice_025.pdf",
+      "file_type": "pdf",
+      "expected_extraction": {
+        "vendor": "Cobb, Allen and Diaz",
+        "buyer_name": "Carr, Odom and Jones",
+        "invoice_number": "95707254",
+        "invoice_date": "2020-07-20",
+        "net_total": "275.07",
+        "vat_total": "27.51",
+        "gross_total": "302.58",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "New KID CUDI \"WZRD\" Rap Hip Hop Soul Music Men's Black T-Shirt Size S to 3XL",
+            "quantity": 5.0,
+            "net_price": "22.49",
+            "vat_pct": "0.10",
+            "line_gross_total": "123.69"
+          },
+          {
+            "description": "Sperry Top-Sider Boys Toddlers Lace Tie Boat Shoes Brown 13M New",
+            "quantity": 1.0,
+            "net_price": "37.69",
+            "vat_pct": "0.10",
+            "line_gross_total": "41.46"
+          },
+          {
+            "description": "TODDLER SHAQ HIGH TOP SHOES SIZE 4",
+            "quantity": 3.0,
+            "net_price": "9.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "32.97"
+          },
+          {
+            "description": "PLAE SAM 2.0 Shoes Sandals Breathable Summer Strap Navy Blue Size 12 Kid",
+            "quantity": 1.0,
+            "net_price": "15.00",
+            "vat_pct": "0.10",
+            "line_gross_total": "16.50"
+          },
+          {
+            "description": "Lotto Soccer Turf Shoes 6 Black Vincente Turf Jr Indoor Outdoor Futbol Cleats",
+            "quantity": 4.0,
+            "net_price": "19.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "87.96"
+          }
+        ],
+        "category": "fashion"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: PDF"
+    },
+    {
+      "source_file": "invoice_003.jpg",
+      "file_type": "jpg",
+      "expected_extraction": {
+        "vendor": "Baker Inc",
+        "buyer_name": "Mitchell, Hill and Strickland",
+        "invoice_number": "26248685",
+        "invoice_date": "2018-05-26",
+        "net_total": "281.00",
+        "vat_total": "28.10",
+        "gross_total": "309.10",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "FashionNova \"Forecasting You\" MAXI DRESS TAUPE SZ M",
+            "quantity": 5.0,
+            "net_price": "25.00",
+            "vat_pct": "0.10",
+            "line_gross_total": "137.50"
+          },
+          {
+            "description": "Leopard Print Large Dress With Pockets & Floral Sleeves HoneyMe Size L NWT",
+            "quantity": 4.0,
+            "net_price": "39.00",
+            "vat_pct": "0.10",
+            "line_gross_total": "171.60"
+          }
+        ],
+        "category": "fashion"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: JPG"
+    },
+    {
+      "source_file": "invoice_027.png",
+      "file_type": "png",
+      "expected_extraction": {
+        "vendor": "Graham, Briggs and Anderson",
+        "buyer_name": "Moore Group",
+        "invoice_number": "10372826",
+        "invoice_date": "2019-05-15",
+        "net_total": "251.45",
+        "vat_total": "25.15",
+        "gross_total": "276.60",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "NEW TOMMY HILFIGER RED WHITE BLUE #5 COLOR BLOCK BEACH SANDALS BOYS KIDS 8/9",
+            "quantity": 5.0,
+            "net_price": "34.50",
+            "vat_pct": "0.10",
+            "line_gross_total": "189.75"
+          },
+          {
+            "description": "10'' Cuphead Game Soft Plush Doll Cuphead Mugman Mecup Brocup kids Gift US Stock",
+            "quantity": 1.0,
+            "net_price": "26.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "29.69"
+          },
+          {
+            "description": "2 Pair-Wonder Nation Childrens Tucker Boots NEW Size 10 Black Easy on/off",
+            "quantity": 4.0,
+            "net_price": "12.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "57.16"
+          }
+        ],
+        "category": "fashion"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: PNG. Mixed kids items (sandals, toy, boots) -> fashion (footwear dominant)"
+    },
+    {
+      "source_file": "invoice_030.tiff",
+      "file_type": "tiff",
+      "expected_extraction": {
+        "vendor": "Blair Ltd",
+        "buyer_name": "Carpenter LLC",
+        "invoice_number": "29907458",
+        "invoice_date": "2017-04-26",
+        "net_total": "377.83",
+        "vat_total": "37.78",
+        "gross_total": "415.61",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "Banana Republic Maroon Abstract ruffled wrap Dress With slip xs 0",
+            "quantity": 4.0,
+            "net_price": "5.00",
+            "vat_pct": "0.10",
+            "line_gross_total": "22.00"
+          },
+          {
+            "description": "StellaLuxe One Shoulder Lace Dress",
+            "quantity": 3.0,
+            "net_price": "25.00",
+            "vat_pct": "0.10",
+            "line_gross_total": "82.50"
+          },
+          {
+            "description": "Women Sexy Lingerie Lace Dress Underwear Babydoll Sleepwear G-String Bikini Lot",
+            "quantity": 4.0,
+            "net_price": "0.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "4.36"
+          },
+          {
+            "description": "R&M; RICHARDS WOMAN'S BLUE DRESS With Rhinestone Accent Short Sleeves Sz 16W NWT",
+            "quantity": 5.0,
+            "net_price": "29.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "164.94"
+          },
+          {
+            "description": "Women Spaghetti Strap Bodycon Mini Dress Sexy Party Club Wear Summer Short Dress",
+            "quantity": 2.0,
+            "net_price": "4.47",
+            "vat_pct": "0.10",
+            "line_gross_total": "9.83"
+          },
+          {
+            "description": "New ERIN Erin Fetherston Straight Dress White Sequence Lining Sleeveless SZ 10",
+            "quantity": 2.0,
+            "net_price": "59.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "131.98"
+          }
+        ],
+        "category": "fashion"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: TIFF"
+    },
+    {
+      "source_file": "invoice_016.jpg",
+      "file_type": "jpg",
+      "expected_extraction": {
+        "vendor": "Harrison-Melton",
+        "buyer_name": "Hoffman-Daniel",
+        "invoice_number": "81163184",
+        "invoice_date": "2017-10-23",
+        "net_total": "3.96",
+        "vat_total": "0.40",
+        "gross_total": "4.36",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "Mossimo M Red and Orange Braided Strap Tank Maxi Dress",
+            "quantity": 4.0,
+            "net_price": "0.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "4.36"
+          }
+        ],
+        "category": "fashion"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: JPG, single-item invoice, very low value"
+    },
+    {
+      "source_file": "invoice_023.tiff",
+      "file_type": "tiff",
+      "expected_extraction": {
+        "vendor": "Mcdaniel, Newman and Williams",
+        "buyer_name": "Williamson and Sons",
+        "invoice_number": "11442355",
+        "invoice_date": "2017-01-31",
+        "net_total": "8.98",
+        "vat_total": "0.90",
+        "gross_total": "9.88",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "Walleye wisdom",
+            "quantity": 2.0,
+            "net_price": "4.49",
+            "vat_pct": "0.10",
+            "line_gross_total": "9.88"
+          }
+        ],
+        "category": "other"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: TIFF, single-item invoice, very low value"
+    },
+    {
+      "source_file": "invoice_024.jpg",
+      "file_type": "jpg",
+      "expected_extraction": {
+        "vendor": "West-Hodges",
+        "buyer_name": "Simmons Inc",
+        "invoice_number": "94166183",
+        "invoice_date": "2019-08-24",
+        "net_total": "19.60",
+        "vat_total": "1.96",
+        "gross_total": "21.56",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "Matilda Jane Womans Lets Go Together Black Knit Dress Size M Medium NWT",
+            "quantity": 1.0,
+            "net_price": "19.60",
+            "vat_pct": "0.10",
+            "line_gross_total": "21.56"
+          }
+        ],
+        "category": "fashion"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: JPG, single-item invoice"
+    },
+    {
+      "source_file": "invoice_026.png",
+      "file_type": "png",
+      "expected_extraction": {
+        "vendor": "Wagner PLC",
+        "buyer_name": "Gutierrez-Williams",
+        "invoice_number": "65166425",
+        "invoice_date": "2020-11-14",
+        "net_total": "125.94",
+        "vat_total": "12.59",
+        "gross_total": "138.53",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "Joma Youth Boys Gol 205 Piso Multitaco Soccer Cleats 3.5 White Blue Yellow NEW",
+            "quantity": 2.0,
+            "net_price": "19.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "43.98"
+          },
+          {
+            "description": "nickelodeon TMNT Teenage Mutant Ninja Turtles D L M R 6in Action Figure Kids Toy",
+            "quantity": 2.0,
+            "net_price": "42.98",
+            "vat_pct": "0.10",
+            "line_gross_total": "94.56"
+          }
+        ],
+        "category": "sports_and_leisure"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: PNG, mixed categories (sports cleats + children's toy) -> other"
+    },
+    {
+      "source_file": "invoice_028.pdf",
+      "file_type": "pdf",
+      "expected_extraction": {
+        "vendor": "Arnold, Mercer and Shelton",
+        "buyer_name": "Turner-Lee",
+        "invoice_number": "37995856",
+        "invoice_date": "2017-06-05",
+        "net_total": "79.98",
+        "vat_total": "8.00",
+        "gross_total": "87.98",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "Nike Pre School Kids Size 12C Jordan Jumpman Team II (PS) AQ2797-300",
+            "quantity": 1.0,
+            "net_price": "59.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "65.99"
+          },
+          {
+            "description": "Joma Boys Youth Gol-102 Soccer Cleats Shoes Size 3.5 White Red Futbol NEW",
+            "quantity": 1.0,
+            "net_price": "19.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "21.99"
+          }
+        ],
+        "category": "sports_and_leisure"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: PDF (scanned/raster), both items are sports footwear. OCR-prone: item numbering and qty."
+    },
+    {
+      "source_file": "invoice_029.pdf",
+      "file_type": "pdf",
+      "expected_extraction": {
+        "vendor": "Roberts, Smith and Rogers",
+        "buyer_name": "Rose Ltd",
+        "invoice_number": "46775557",
+        "invoice_date": "2019-04-05",
+        "net_total": "72.98",
+        "vat_total": "7.30",
+        "gross_total": "80.28",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "Boden Wren Ponte Midi Dress w/Color Block Hem NWT Size 10P Black Pink 10 Petite",
+            "quantity": 1.0,
+            "net_price": "58.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "64.89"
+          },
+          {
+            "description": "Women Black Dress Mori Girl Puff Sleeve Korean Casual Loose Peter Pan Collar",
+            "quantity": 1.0,
+            "net_price": "13.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "15.39"
+          }
+        ],
+        "category": "fashion"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: PDF (scanned/raster), both items are dresses"
+    },
+    {
+      "source_file": "invoice_031.jpg",
+      "file_type": "jpg",
+      "expected_extraction": {
+        "vendor": "Hamilton, Schmidt and Graves",
+        "buyer_name": "Rodriguez, Davis and Lee",
+        "invoice_number": "83876203",
+        "invoice_date": "2019-03-29",
+        "net_total": "254.84",
+        "vat_total": "25.48",
+        "gross_total": "280.32",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "The Wim Hof Method Activate Your Potential, Transcend Your Limits",
+            "quantity": 4.0,
+            "net_price": "4.22",
+            "vat_pct": "0.10",
+            "line_gross_total": "18.57"
+          },
+          {
+            "description": "Merry Robin Hood by H. Pyle New Sealed Illustrated Leather Bound Gift Hardback",
+            "quantity": 4.0,
+            "net_price": "19.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "87.96"
+          },
+          {
+            "description": "Christmas Cupcake Murder: A Festive & Delicious Ch... by Joanne Fluke (P.D.F)",
+            "quantity": 5.0,
+            "net_price": "2.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "16.45"
+          },
+          {
+            "description": "Sing My Way Home: Voices of the New American Roots",
+            "quantity": 5.0,
+            "net_price": "5.61",
+            "vat_pct": "0.10",
+            "line_gross_total": "30.86"
+          },
+          {
+            "description": "Rebecca and Ana (American Girl (Quality))",
+            "quantity": 1.0,
+            "net_price": "4.49",
+            "vat_pct": "0.10",
+            "line_gross_total": "4.94"
+          },
+          {
+            "description": "Unleashed : The Story of Tool, Paperback by McIver, Joel, Brand New, Free shi...",
+            "quantity": 2.0,
+            "net_price": "16.88",
+            "vat_pct": "0.10",
+            "line_gross_total": "37.14"
+          },
+          {
+            "description": "[NEW] A Divine Revelation Of Hell by Mary K. Baxter",
+            "quantity": 5.0,
+            "net_price": "15.35",
+            "vat_pct": "0.10",
+            "line_gross_total": "84.43"
+          }
+        ],
+        "category": "books"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: JPG, 7-item invoice, all books. Item 1 description contains unicode box characters in source image (encoding edge case)."
+    },
+    {
+      "source_file": "invoice_032.png",
+      "file_type": "png",
+      "expected_extraction": {
+        "vendor": "Chase, Green and Bailey",
+        "buyer_name": "Buckley, Wright and Chase",
+        "invoice_number": "87734908",
+        "invoice_date": "2019-12-19",
+        "net_total": "5.98",
+        "vat_total": "0.60",
+        "gross_total": "6.58",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "the invisible life of addie larue, EBOOK new original high quality, updated 2020",
+            "quantity": 2.0,
+            "net_price": "2.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "6.58"
+          }
+        ],
+        "category": "books"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: PNG, single-item, ebook"
+    },
+    {
+      "source_file": "invoice_004.jpg",
+      "file_type": "jpg",
+      "expected_extraction": {
+        "vendor": "Murphy-Sanders",
+        "buyer_name": "Parker, Graham and Swanson",
+        "invoice_number": "46301857",
+        "invoice_date": "2017-04-08",
+        "net_total": "59.35",
+        "vat_total": "5.94",
+        "gross_total": "65.29",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "Care & Repair of Furniture",
+            "quantity": 5.0,
+            "net_price": "4.25",
+            "vat_pct": "0.10",
+            "line_gross_total": "23.37"
+          },
+          {
+            "description": "Harry Potter and the Chamber of Secrets (Book 2) by Rowling, J. K. Paperback The",
+            "quantity": 5.0,
+            "net_price": "7.62",
+            "vat_pct": "0.10",
+            "line_gross_total": "41.91"
+          }
+        ],
+        "category": "books"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: JPG, 2 books"
+    },
+    {
+      "source_file": "invoice_009.pdf",
+      "file_type": "pdf",
+      "expected_extraction": {
+        "vendor": "Padilla, Mccarthy and Gonzales",
+        "buyer_name": "Parker-Fowler",
+        "invoice_number": "18975369",
+        "invoice_date": "2021-05-26",
+        "net_total": "140.00",
+        "vat_total": "14.00",
+        "gross_total": "154.00",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "Nintendo Gameboy Pocket Console Green with Box MGB-001 Japan Tested Working 55",
+            "quantity": 2.0,
+            "net_price": "70.00",
+            "vat_pct": "0.10",
+            "line_gross_total": "154.00"
+          }
+        ],
+        "category": "sports_and_leisure"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: PDF (scanned/raster), single-item, vintage gaming hardware"
+    },
+    {
+      "source_file": "invoice_010.pdf",
+      "file_type": "pdf",
+      "expected_extraction": {
+        "vendor": "Jenkins, Green and Strickland",
+        "buyer_name": "Perkins PLC",
+        "invoice_number": "80150256",
+        "invoice_date": "2017-07-24",
+        "net_total": "95.32",
+        "vat_total": "9.53",
+        "gross_total": "104.85",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "The Heretic's Daughter by Kathleen Kent",
+            "quantity": 4.0,
+            "net_price": "3.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "17.56"
+          },
+          {
+            "description": "How to Get an Asian Girlfriend by Derek Strong (English) Paperback Book Free Shi",
+            "quantity": 1.0,
+            "net_price": "15.44",
+            "vat_pct": "0.10",
+            "line_gross_total": "16.98"
+          },
+          {
+            "description": "Jesus (Hardback or Cased Book)",
+            "quantity": 2.0,
+            "net_price": "31.96",
+            "vat_pct": "0.10",
+            "line_gross_total": "70.31"
+          }
+        ],
+        "category": "books"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: PDF (scanned/raster), 3 books. Item 2 qty OCR-prone."
+    },
+    {
+      "source_file": "invoice_011.pdf",
+      "file_type": "pdf",
+      "expected_extraction": {
+        "vendor": "Hart-Johnson",
+        "buyer_name": "Martin and Sons",
+        "invoice_number": "33784215",
+        "invoice_date": "2018-03-24",
+        "net_total": "56.78",
+        "vat_total": "5.68",
+        "gross_total": "62.46",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "Adult Kids Pokemon Pikachu Kigurumi Pajama Cosplay Christmas Costume Sleepwear",
+            "quantity": 4.0,
+            "net_price": "9.95",
+            "vat_pct": "0.10",
+            "line_gross_total": "43.78"
+          },
+          {
+            "description": "Cherry Halter Rockabilly Black Summer Dress Size 3/4",
+            "quantity": 2.0,
+            "net_price": "3.50",
+            "vat_pct": "0.10",
+            "line_gross_total": "7.70"
+          },
+          {
+            "description": "Lumiere Large Multicolored Orange Short Dress NWT",
+            "quantity": 1.0,
+            "net_price": "4.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "5.49"
+          },
+          {
+            "description": "NWT Boohoo Sabra Emerald Green Floral Ruffle Dress Sz 12",
+            "quantity": 1.0,
+            "net_price": "4.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "5.49"
+          }
+        ],
+        "category": "fashion"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: PDF (scanned/raster). Item 2 line_gross_total OCR may misread as 'L,4Q' instead of 7.70."
+    },
+    {
+      "source_file": "invoice_015.pdf",
+      "file_type": "pdf",
+      "expected_extraction": {
+        "vendor": "Hill PLC",
+        "buyer_name": "Ward-Lindsey",
+        "invoice_number": "55236311",
+        "invoice_date": "2017-10-21",
+        "net_total": "126.96",
+        "vat_total": "12.70",
+        "gross_total": "139.66",
+        "currency": "USD",
+        "items": [
+          {
+            "description": "Nightmares in the Sky: Gargoyles and Grotesques",
+            "quantity": 5.0,
+            "net_price": "7.50",
+            "vat_pct": "0.10",
+            "line_gross_total": "41.25"
+          },
+          {
+            "description": "Spectacular Ireland Coffee Table Book - very large",
+            "quantity": 1.0,
+            "net_price": "10.00",
+            "vat_pct": "0.10",
+            "line_gross_total": "11.00"
+          },
+          {
+            "description": "Midnight Sun(Twilight) by Stephenie Meyer | Hardback UK Edition",
+            "quantity": 3.0,
+            "net_price": "24.99",
+            "vat_pct": "0.10",
+            "line_gross_total": "82.47"
+          },
+          {
+            "description": "The Fifty Greatest Conspiracies of All Time History s Biggest Myster",
+            "quantity": 1.0,
+            "net_price": "4.49",
+            "vat_pct": "0.10",
+            "line_gross_total": "4.94"
+          }
+        ],
+        "category": "books"
+      },
+      "expected_decision": "accept",
+      "expected_failures": [],
+      "notes": "Test: PDF (scanned/raster), all books"
+    }
+  ]
+}

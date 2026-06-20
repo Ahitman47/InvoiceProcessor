@@ -1,0 +1,154 @@
+{
+  "rule_eval": [
+    {
+      "id": "happy_path",
+      "description": "All fields are valid and no rules are violated → accept",
+      "extracted": {
+        "vendor": "Acme Ltd", "buyer_name": "Buyer Co", "invoice_number": "INV-001",
+        "invoice_date": "2023-05-10", "currency": "EUR",
+        "net_total": "100.00", "vat_total": "21.00", "gross_total": "121.00",
+        "items": [{"description": "Item A", "quantity": 1, "net_price": "100.00", "vat_pct": "21.0", "line_gross_total": "121.00"}]
+      },
+      "expected_decision": "accept",
+      "expected_failed_rules": []
+    },
+    {
+      "id": "R1_total_too_high",
+      "description": "Gross total exceeds 500 EUR → reject",
+      "extracted": {
+        "vendor": "Acme Ltd", "buyer_name": "Buyer Co", "invoice_number": "INV-002",
+        "invoice_date": "2023-05-10", "currency": "EUR",
+        "net_total": "500.00", "vat_total": "105.00", "gross_total": "605.00",
+        "items": [{"description": "Item A", "quantity": 1, "net_price": "100.00", "vat_pct": "21.0", "line_gross_total": "121.00"},
+        {"description": "Item B", "quantity": 1, "net_price": "100.00", "vat_pct": "21.0", "line_gross_total": "121.00"},
+        {"description": "Item C", "quantity": 1, "net_price": "100.00", "vat_pct": "21.0", "line_gross_total": "121.00"},
+        {"description": "Item D", "quantity": 1, "net_price": "100.00", "vat_pct": "21.0", "line_gross_total": "121.00"},
+        {"description": "Item E", "quantity": 1, "net_price": "100.00", "vat_pct": "21.0", "line_gross_total": "121.00"}]
+      },
+      "expected_decision": "reject",
+      "expected_failed_rules": ["max_total_amount"]
+    },
+    {
+      "id": "R2_too_old",
+      "description": "Invoice date is before 2017 → reject",
+      "extracted": {
+        "vendor": "Acme Ltd", "buyer_name": "Buyer Co", "invoice_number": "INV-003",
+        "invoice_date": "2016-12-31", "currency": "EUR",
+        "net_total": "100.00", "vat_total": "21.00", "gross_total": "121.00",
+        "items": [{"description": "Item A", "quantity": 1, "net_price": "100.00", "vat_pct": "21.0", "line_gross_total": "121.00"}]
+      },
+      "expected_decision": "reject",
+      "expected_failed_rules": ["min_invoice_year"]
+    },
+    {
+      "id": "R3_missing_vendor",
+      "description": "Required field (vendor) is missing → reject",
+      "extracted": {
+        "vendor": null, "buyer_name": "Buyer Co", "invoice_number": "INV-004",
+        "invoice_date": "2023-05-10", "currency": "EUR",
+        "net_total": "100.00", "vat_total": "21.00", "gross_total": "121.00",
+        "items": [{"description": "Item A", "quantity": 1, "net_price": "100.00", "vat_pct": "21.0", "line_gross_total": "121.00"}]
+      },
+      "expected_decision": "reject",
+      "expected_failed_rules": ["required_fields"]
+    },
+    {
+      "id": "R4_sum_mismatch_outside_tolerance",
+      "description": "Sum of line totals differs from gross total by more than 1.00 → reject",
+      "extracted": {
+        "vendor": "Acme Ltd", "buyer_name": "Buyer Co", "invoice_number": "INV-005",
+        "invoice_date": "2023-05-10", "currency": "EUR",
+        "net_total": "100.00", "vat_total": "21.00", "gross_total": "121.00",
+        "items": [{"description": "Item A", "quantity": 1, "net_price": "100.00", "vat_pct": "21.0", "line_gross_total": "150.00"}]
+      },
+      "expected_decision": "reject",
+      "expected_failed_rules": ["line_total_tolerance"]
+    },
+    {
+      "id": "R4_within_tolerance",
+      "description": "Difference is 0.99, which is within the allowed tolerance → accept",
+      "extracted": {
+        "vendor": "Acme Ltd", "buyer_name": "Buyer Co", "invoice_number": "INV-006",
+        "invoice_date": "2023-05-10", "currency": "EUR",
+        "net_total": "100.00", "vat_total": "21.00", "gross_total": "121.00",
+        "items": [{"description": "Item A", "quantity": 1, "net_price": "100.00", "vat_pct": "21.0", "line_gross_total": "120.01"}]
+      },
+      "expected_decision": "accept",
+      "expected_failed_rules": []
+    },
+    {
+      "id": "R5_item_too_high",
+      "description": "A single item exceeds 200 EUR → reject",
+      "extracted": {
+        "vendor": "Acme Ltd", "buyer_name": "Buyer Co", "invoice_number": "INV-007",
+        "invoice_date": "2023-05-10", "currency": "EUR",
+        "net_total": "210.00", "vat_total": "0.00", "gross_total": "210.00",
+        "items": [{"description": "Expensive item", "quantity": 1, "net_price": "210.00", "vat_pct": "0.0", "line_gross_total": "210.00"}]
+      },
+      "expected_decision": "reject",
+      "expected_failed_rules": ["max_item_amount"]
+    },
+    {
+      "id": "R6_duplicate",
+      "description": "Invoice with same vendor + invoice number has already been processed → reject",
+      "extracted": {
+        "vendor": "Acme Ltd", "buyer_name": "Buyer Co", "invoice_number": "INV-001",
+        "invoice_date": "2023-05-10", "currency": "EUR",
+        "net_total": "100.00", "vat_total": "21.00", "gross_total": "121.00",
+        "items": [{"description": "Item A", "quantity": 1, "net_price": "100.00", "vat_pct": "21.0", "line_gross_total": "121.00"}]
+      },
+      "expected_decision": "reject",
+      "expected_failed_rules": ["duplicate"],
+      "notes": "requiers happy path to already be in the store"
+    },
+    {
+      "id": "currency_usd_converted",
+      "description": "USD amounts are converted to EUR before validation",
+      "extracted": {
+        "vendor": "Acme Ltd", "buyer_name": "Buyer Co", "invoice_number": "INV-008",
+        "invoice_date": "2023-05-10", "currency": "USD",
+        "net_total": "540.00", "vat_total": "0.00", "gross_total": "540.00",
+        "items": [{"description": "Item A", "quantity": 1, "net_price": "540.00", "vat_pct": "0.0", "line_gross_total": "540.00"}]
+      },
+      "expected_decision": "reject",
+      "expected_failed_rules": ["max_item_amount"],
+      "notes": "540 USD is ~ 497 EUR, so the total amount rule should pass. The item amount is still above the 200 EUR limit after conversion, so invoice is rejected."
+    },
+    {
+      "id": "currency_unknown_rejected",
+      "description": "Unsupported currency GBP → reject",
+      "extracted": {
+        "vendor": "Acme Ltd", "buyer_name": "Buyer Co", "invoice_number": "INV-009",
+        "invoice_date": "2023-05-10", "currency": "GBP",
+        "net_total": "100.00", "vat_total": "0.00", "gross_total": "100.00",
+        "items": [{"description": "Item A", "quantity": 1, "net_price": "100.00", "vat_pct": "0.0", "line_gross_total": "100.00"}]
+      },
+      "expected_decision": "reject",
+      "expected_failed_rules": ["currency"]
+    },
+    {
+      "id": "currency_missing_rejected",
+      "description": "Currency missing → reject",
+      "extracted": {
+        "vendor": "Acme Ltd", "buyer_name": "Buyer Co", "invoice_number": "INV-010",
+        "invoice_date": "2023-05-10", "currency": null,
+        "net_total": "100.00", "vat_total": "0.00", "gross_total": "100.00",
+        "items": [{"description": "Item A", "quantity": 1, "net_price": "100.00", "vat_pct": "0.0", "line_gross_total": "100.00"}]
+      },
+      "expected_decision": "reject",
+      "expected_failed_rules": ["currency"]
+    },
+    {
+      "id": "multiple_failures",
+      "description": "Several validation rules fail at the same time. All failure reasons should be returned.",
+      "extracted": {
+        "vendor": null, "buyer_name": "Buyer Co", "invoice_number": "INV-011",
+        "invoice_date": "2015-01-01", "currency": "EUR",
+        "net_total": "800.00", "vat_total": "0.00", "gross_total": "800.00",
+        "items": [{"description": "Big item", "quantity": 1, "net_price": "800.00", "vat_pct": "0.0", "line_gross_total": "800.00"}]
+      },
+      "expected_decision": "reject",
+      "expected_failed_rules": ["required_fields", "min_invoice_year", "max_total_amount", "max_item_amount"]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+currency:
+  base: EUR
+  accepted: [EUR, USD]
+  rates:
+    USD: 0.92   # USD → EUR, fixed rate (production would integrate live rate at invoice date)
+
+rules:
+  required_fields: # R3: reject if any of these fields are missing
+    - vendor
+    - invoice_date
+    - buyer_name
+    - gross_total
+  min_invoice_year: 2017     # R2: reject if year < min_invoice_year
+  max_item_amount: 200       # R5: unsure whether total quantity*unit_price is meant or 1 unit price; for now assumed reject if line_gross_total > max_item_amount
+  max_total_amount: 500      # R1: reject if total > max_total_amount (in EUR)
+  line_total_tolerance: 1.00 # R4: reject if |sum(line_gross_total) - gross_total| > line_total_tolerance (in EUR)
+
+categories:
+  - fashion
+  - books
+  - sports_and_leisure
+  - other
+
+processing:
+  max_image_dimension: 1500   # cap on image size → saves tokens
+
+extraction:
+  model: "claude-haiku-4-5"
+  max_parse_attempts: 3
+  temperature: 0
+  max_tokens: 2048
